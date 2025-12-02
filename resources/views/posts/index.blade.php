@@ -26,7 +26,7 @@
 @endforeach
 </td>
 <td class="p-3">
-<a href="{{route('posts.show', $post->id)}}" class="text-blue-600">View</a>
+<a href="{{route('posts.show', $post->slug)}}" class="text-blue-600">View</a>
 </td>
 </tr>
 @endforeach

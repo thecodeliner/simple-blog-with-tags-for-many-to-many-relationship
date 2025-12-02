@@ -8,7 +8,7 @@ use App\Http\Controllers\TagController;
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/store', [PostController::class, 'store'])->name('posts.store');
-Route::get('/show/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/post/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 
 //tags
 Route::get('/tags', [TagController::class, 'index'])->name('tags.index');

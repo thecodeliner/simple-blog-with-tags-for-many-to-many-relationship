@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -35,8 +36,18 @@ class PostController extends Controller
             'tags.*'      => 'string|distinct|max:50',  // each tag max 50 chars
             
             ]);
-            
+        $validated['slug'] = Str::slug($validated['title']);  
+
+        // Make slug unique
+        $originalSlug = $validated['slug'];
+        $count = 1;
+
+        while (Post::where('slug', $validated['slug'])->exists()) {
+            $validated['slug'] = $originalSlug . '-' . $count++;
+        }
+
         $post = Post::create($validated);
+
             
         $post->tags()->sync($validated['tags'] ?? []); // one line
         
@@ -46,7 +57,7 @@ class PostController extends Controller
     
     public function show(Post $post){
         
-        // $post = Post::with('tags')->find($post);
+        //$post = Post::where('tags')->find($slug);
         $post->load('tags');
         return view('posts.show', compact('post'));
         
