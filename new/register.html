@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - MedApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="max-w-lg w-full bg-white shadow-md rounded p-8">
+    <h1 class="text-2xl font-bold text-blue-700 text-center">Create Patient Account</h1>
+    <p class="text-sm text-gray-500 text-center mb-6">Fill your details to register</p>
+    <form class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Full name" class="px-3 py-2 border rounded" />
+        <input type="tel" placeholder="Phone" class="px-3 py-2 border rounded" />
+      </div>
+      <input type="email" placeholder="Email" class="w-full px-3 py-2 border rounded" />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="password" placeholder="Password" class="px-3 py-2 border rounded" />
+        <input type="password" placeholder="Confirm password" class="px-3 py-2 border rounded" />
+      </div>
+      <input type="text" placeholder="Address (optional)" class="w-full px-3 py-2 border rounded" />
+      <button class="w-full bg-blue-600 text-white py-2 rounded">Register</button>
+    </form>
+    <p class="text-center text-sm text-gray-500 mt-4">Already have an account? <a href="login.html" class="text-blue-600">Login</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Dashboard - MedApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="flex h-screen">
+    <!-- Sidebar (Patient - Blue) -->
+    <aside class="w-64 bg-blue-600 text-white p-6">
+      <h2 class="text-2xl font-bold mb-6">Patient Panel</h2>
+      <nav class="space-y-3">
+        <a href="patient_dashboard.html" class="block px-3 py-2 rounded bg-blue-700">Dashboard</a>
+        <a href="book_appointment.html" class="block px-3 py-2 rounded hover:bg-blue-500">Book Appointment</a>
+        <a href="patient_dashboard.html#my" class="block px-3 py-2 rounded hover:bg-blue-500">My Appointments</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-blue-500">Profile</a>
+        <a href="login.html" class="block px-3 py-2 rounded hover:bg-blue-500">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-auto">
+
+      <!-- Top Bar -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold">Dashboard</h1>
+        <a href="book_appointment.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          Book Appointment
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-gray-500">Total Appointments</h3>
+          <p class="text-3xl font-bold text-blue-600">12</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-gray-500">Pending</h3>
+          <p class="text-3xl font-bold text-yellow-500">3</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-gray-500">Approved</h3>
+          <p class="text-3xl font-bold text-green-600">7</p>
+        </div>
+      </div>
+
+      <!-- Appointments List -->
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">My Recent Appointments</h2>
+
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-200 text-left">
+              <th class="p-3">Doctor</th>
+              <th class="p-3">Date</th>
+              <th class="p-3">Time</th>
+              <th class="p-3">Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="border-b">
+              <td class="p-3">Dr. Mahmud</td>
+              <td class="p-3">12 Nov 2025</td>
+              <td class="p-3">10:00 AM</td>
+              <td class="p-3 text-yellow-600 font-semibold">Pending</td>
+            </tr>
+
+            <tr class="border-b">
+              <td class="p-3">Dr. Sarah</td>
+              <td class="p-3">10 Nov 2025</td>
+              <td class="p-3">02:00 PM</td>
+              <td class="p-3 text-green-600 font-semibold">Approved</td>
+            </tr>
+
+            <tr class="border-b">
+              <td class="p-3">Dr. Rahim</td>
+              <td class="p-3">05 Nov 2025</td>
+              <td class="p-3">11:30 AM</td>
+              <td class="p-3 text-red-600 font-semibold">Rejected</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
